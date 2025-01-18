@@ -1,0 +1,214 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import LanguageToggle from '../../components/LanguageToggle.astro';
+import { translations } from '../../i18n/translations';
+
+const t = translations.uk;
+---
+
+<Layout title="GlobalCare - Осяюємо Життя">
+	<Navbar />
+	<LanguageToggle currentLang="uk" />
+	
+	<!-- Hero Section -->
+	<section class="relative min-h-screen flex items-center justify-center bg-black">
+		<div class="absolute inset-0 overflow-hidden">
+			<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3')] bg-cover bg-center opacity-20"></div>
+			<div class="absolute inset-0 bg-supernova opacity-40"></div>
+		</div>
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center" data-aos="fade-up">
+			<div class="animate-pulse-slow">
+				<h1 class="text-6xl md:text-8xl font-bold text-white mb-6">
+					{t.hero.title} <span class="bg-cosmic-gradient text-transparent bg-clip-text">{t.hero.titleSpan}</span>
+				</h1>
+			</div>
+			<p class="text-xl text-cosmic-100 mb-8 max-w-2xl mx-auto">
+				{t.hero.description}
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<a href="#donate" class="bg-cosmic-gradient text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all glow">
+					{t.hero.cta.primary}
+				</a>
+				<a href="#about" class="bg-black/50 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-black/70 transition-colors border-2 border-cosmic-300">
+					{t.hero.cta.secondary}
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Impact Numbers -->
+	<section class="py-20 bg-black/80" id="impact">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+				<div data-aos="fade-up" data-aos-delay="0" class="bg-black/50 p-8 rounded-2xl backdrop-blur-lg border border-cosmic-300/20">
+					<div class="text-5xl font-bold bg-cosmic-gradient text-transparent bg-clip-text mb-2">{t.impact.stats.lives.number}</div>
+					<div class="text-cosmic-100">{t.impact.stats.lives.title}</div>
+					<p class="text-sm text-cosmic-300 mt-2">{t.impact.stats.lives.description}</p>
+				</div>
+				<div data-aos="fade-up" data-aos-delay="100" class="bg-black/50 p-8 rounded-2xl backdrop-blur-lg border border-cosmic-300/20">
+					<div class="text-5xl font-bold bg-cosmic-gradient text-transparent bg-clip-text mb-2">{t.impact.stats.projects.number}</div>
+					<div class="text-cosmic-100">{t.impact.stats.projects.title}</div>
+					<p class="text-sm text-cosmic-300 mt-2">{t.impact.stats.projects.description}</p>
+				</div>
+				<div data-aos="fade-up" data-aos-delay="200" class="bg-black/50 p-8 rounded-2xl backdrop-blur-lg border border-cosmic-300/20">
+					<div class="text-5xl font-bold bg-cosmic-gradient text-transparent bg-clip-text mb-2">{t.impact.stats.countries.number}</div>
+					<div class="text-cosmic-100">{t.impact.stats.countries.title}</div>
+					<p class="text-sm text-cosmic-300 mt-2">{t.impact.stats.countries.description}</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section class="py-20 bg-black/90" id="about">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+				<div data-aos="fade-right" class="relative">
+					<div class="absolute inset-0 bg-cosmic-gradient opacity-20 blur-2xl"></div>
+					<img 
+						src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3" 
+						alt={t.about.title}
+						class="relative rounded-lg shadow-xl"
+					/>
+				</div>
+				<div data-aos="fade-left" class="text-white">
+					<h2 class="text-4xl font-bold mb-6 bg-cosmic-gradient text-transparent bg-clip-text">{t.about.title}</h2>
+					<p class="text-cosmic-100 mb-6">{t.about.description}</p>
+					<ul class="space-y-4">
+						<li class="flex items-center bg-black/50 p-4 rounded-lg border border-cosmic-300/20">
+							<div class="w-12 h-12 flex items-center justify-center bg-cosmic-gradient rounded-full mr-4">
+								<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+									<path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+								</svg>
+							</div>
+							<div>
+								<span class="font-semibold text-cosmic-100">{t.about.features.development.title}</span>
+								<p class="text-sm text-cosmic-300">{t.about.features.development.description}</p>
+							</div>
+						</li>
+						<li class="flex items-center bg-black/50 p-4 rounded-lg border border-cosmic-300/20">
+							<div class="w-12 h-12 flex items-center justify-center bg-cosmic-gradient rounded-full mr-4">
+								<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+									<path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+								</svg>
+							</div>
+							<div>
+								<span class="font-semibold text-cosmic-100">{t.about.features.empowerment.title}</span>
+								<p class="text-sm text-cosmic-300">{t.about.features.empowerment.description}</p>
+							</div>
+						</li>
+						<li class="flex items-center bg-black/50 p-4 rounded-lg border border-cosmic-300/20">
+							<div class="w-12 h-12 flex items-center justify-center bg-cosmic-gradient rounded-full mr-4">
+								<svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+									<path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/>
+								</svg>
+							</div>
+							<div>
+								<span class="font-semibold text-cosmic-100">{t.about.features.protection.title}</span>
+								<p class="text-sm text-cosmic-300">{t.about.features.protection.description}</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Projects Section -->
+	<section class="py-20 bg-black/80" id="projects">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-4xl font-bold text-center bg-cosmic-gradient text-transparent bg-clip-text mb-12">{t.projects.title}</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div class="bg-black/50 rounded-lg overflow-hidden border border-cosmic-300/20" data-aos="fade-up" data-aos-delay="0">
+					<div class="relative">
+						<div class="absolute inset-0 bg-cosmic-gradient opacity-20"></div>
+						<img 
+							src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3" 
+							alt={t.projects.items.water.title}
+							class="w-full h-48 object-cover"
+						/>
+					</div>
+					<div class="p-6">
+						<h3 class="text-xl font-bold text-cosmic-100 mb-2">{t.projects.items.water.title}</h3>
+						<p class="text-cosmic-300">{t.projects.items.water.description}</p>
+					</div>
+				</div>
+				<div class="bg-black/50 rounded-lg overflow-hidden border border-cosmic-300/20" data-aos="fade-up" data-aos-delay="100">
+					<div class="relative">
+						<div class="absolute inset-0 bg-cosmic-gradient opacity-20"></div>
+						<img 
+							src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-4.0.3" 
+							alt={t.projects.items.education.title}
+							class="w-full h-48 object-cover"
+						/>
+					</div>
+					<div class="p-6">
+						<h3 class="text-xl font-bold text-cosmic-100 mb-2">{t.projects.items.education.title}</h3>
+						<p class="text-cosmic-300">{t.projects.items.education.description}</p>
+					</div>
+				</div>
+				<div class="bg-black/50 rounded-lg overflow-hidden border border-cosmic-300/20" data-aos="fade-up" data-aos-delay="200">
+					<div class="relative">
+						<div class="absolute inset-0 bg-cosmic-gradient opacity-20"></div>
+						<img 
+							src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?ixlib=rb-4.0.3" 
+							alt={t.projects.items.agriculture.title}
+							class="w-full h-48 object-cover"
+						/>
+					</div>
+					<div class="p-6">
+						<h3 class="text-xl font-bold text-cosmic-100 mb-2">{t.projects.items.agriculture.title}</h3>
+						<p class="text-cosmic-300">{t.projects.items.agriculture.description}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section class="py-20 bg-black/90" id="contact">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="max-w-2xl mx-auto text-center">
+				<h2 class="text-4xl font-bold bg-cosmic-gradient text-transparent bg-clip-text mb-8">{t.contact.title}</h2>
+				<p class="text-cosmic-100 mb-8">{t.contact.description}</p>
+				<div class="space-y-4">
+					<a 
+						href="mailto:contact@globalcare.org" 
+						class="inline-block bg-cosmic-gradient text-white px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all glow"
+					>
+						{t.contact.cta}
+					</a>
+					<p class="text-sm text-cosmic-300">
+						{t.contact.info.email}<br>
+						{t.contact.info.phone}<br>
+						{t.contact.info.address}
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Donation Section -->
+	<section class="py-20 bg-cosmic-gradient" id="donate">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+			<h2 class="text-4xl font-bold text-white mb-8">{t.donate.title}</h2>
+			<p class="text-white/90 mb-8 max-w-2xl mx-auto">{t.donate.description}</p>
+			<div class="space-y-6">
+				<a 
+					href="#" 
+					class="inline-block bg-white text-primary px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-all glow"
+				>
+					{t.donate.cta}
+				</a>
+				<p class="text-white/80 text-sm">
+					{t.donate.legal.split('\n').map((line) => (
+						<Fragment>
+							{line}<br />
+						</Fragment>
+					))}
+				</p>
+			</div>
+		</div>
+	</section>
+</Layout>

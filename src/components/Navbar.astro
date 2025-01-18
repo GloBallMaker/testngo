@@ -1,0 +1,29 @@
+---
+const menuItems = [
+  { name: 'Home', href: '#' },
+  { name: 'About', href: '#about' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Impact', href: '#impact' },
+  { name: 'Contact', href: '#contact' },
+];
+---
+
+<nav class="fixed w-full bg-black/50 backdrop-blur-lg shadow-lg z-50 border-b border-cosmic-300/20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex-shrink-0 flex items-center">
+        <span class="text-2xl font-bold bg-cosmic-gradient text-transparent bg-clip-text">GlobalCare</span>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+        {menuItems.map(item => (
+          <a href={item.href} class="text-white/90 hover:text-cosmic-300 transition-colors">
+            {item.name}
+          </a>
+        ))}
+        <a href="#donate" class="bg-cosmic-gradient text-white px-6 py-2 rounded-full hover:opacity-90 transition-all glow">
+          Donate Now
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
